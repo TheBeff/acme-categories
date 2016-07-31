@@ -17,6 +17,8 @@ app.get('/', function(req, res, next){
 	res.render('index', { title: 'Home'});
 });
 
+app.use('/categories', require('./routes/categories'));
+
 app.listen(3000, function(){
 	console.log('listening');
 });
