@@ -5,7 +5,12 @@
 	</head>
 	<body>
 		<ul class="nav nav-tabs">
-			<li><a href="/">Home</a></li>
+      <li {%if !category %} class='active' {% endif %}><a href="/">Home</a></li>
+      {% for _category in categories %}
+      <li {%if _category === category %}class='active'{% endif %}>
+          <a href='/categories/{{_category}}'>{{_category}}</a>
+        </li>
+      {% endfor %}
 		</ul>
 		<div class="container">
 			<div style="margin-top:10px">

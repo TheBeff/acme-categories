@@ -1,4 +1,6 @@
-var _categories = {};
+var _categories = {
+  foo: []
+};
 
 module.exports = {
 	getCategories: function(){
@@ -6,5 +8,11 @@ module.exports = {
 	},
 	addCategory: function(name){
 		_categories[name] = [];
-	}
+	},
+	addProduct: function(category, product){
+		_categories[category].push({ name: product});
+	},
+  getProducts: function(category){
+    return _categories[category];
+  }
 };
